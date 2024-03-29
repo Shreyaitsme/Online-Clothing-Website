@@ -146,7 +146,7 @@ export function Cart() {
           >
             <h2
               id="summary-heading"
-              className="px-4 py-3 text-lg text-gray-900 border-b border-gray-200  font-large sm:p-4"
+              className="px-4 py-3 text-lg text-gray-900 border-b border-gray-200 font-large sm:p-4"
             >
               Price Details
             </h2>
@@ -192,3 +192,6 @@ export function Cart() {
     </div>
   );
 }
+
+
+
