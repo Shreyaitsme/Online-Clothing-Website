@@ -42,15 +42,15 @@ const products = [
 
 export function Cart() {
   return (
-    <div className="mx-auto max-w-7xl px-2 lg:px-0">
-      <div className="mx-auto max-w-2xl py-8 lg:max-w-7xl">
+    <div className="px-2 mx-auto max-w-7xl lg:px-0">
+      <div className="max-w-2xl py-8 mx-auto lg:max-w-7xl">
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Shopping Cart
         </h1>
         <form className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
           <section
             aria-labelledby="cart-heading"
-            className="rounded-lg bg-white lg:col-span-8"
+            className="bg-white rounded-lg lg:col-span-8"
           >
             <h2 id="cart-heading" className="sr-only">
               Items in your shopping cart
@@ -63,11 +63,11 @@ export function Cart() {
                       <img
                         src={product.imageSrc}
                         alt={product.name}
-                        className="sm:h-38 sm:w-38 h-24 w-24 rounded-md object-contain object-center"
+                        className="object-contain object-center w-24 h-24 rounded-md sm:h-38 sm:w-38"
                       />
                     </div>
 
-                    <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
+                    <div className="flex flex-col justify-between flex-1 ml-4 sm:ml-6">
                       <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                         <div>
                           <div className="flex justify-between">
@@ -80,17 +80,17 @@ export function Cart() {
                               </a>
                             </h3>
                           </div>
-                          <div className="mt-1 flex text-sm">
+                          <div className="flex mt-1 text-sm">
                             <p className="text-sm text-gray-500">
                               {product.color}
                             </p>
                             {product.size ? (
-                              <p className="ml-4 border-l border-gray-200 pl-4 text-sm text-gray-500">
+                              <p className="pl-4 ml-4 text-sm text-gray-500 border-l border-gray-200">
                                 {product.size}
                               </p>
                             ) : null}
                           </div>
-                          <div className="mt-1 flex items-end">
+                          <div className="flex items-end mt-1">
                             <p className="text-xs font-medium text-gray-500 line-through">
                               {product.originalPrice}
                             </p>
@@ -106,27 +106,27 @@ export function Cart() {
                       </div>
                     </div>
                   </li>
-                  <div className="mb-2 flex">
-                    <div className="min-w-24 flex">
+                  <div className="flex mb-2">
+                    <div className="flex min-w-24">
                       <button type="button" className="h-7 w-7">
                         -
                       </button>
                       <input
                         type="text"
-                        className="mx-1 h-7 w-9 rounded-md border text-center"
+                        className="mx-1 text-center border rounded-md h-7 w-9"
                         defaultValue={1}
                       />
                       <button
                         type="button"
-                        className="flex h-7 w-7 items-center justify-center"
+                        className="flex items-center justify-center h-7 w-7"
                       >
                         +
                       </button>
                     </div>
-                    <div className="ml-6 flex text-sm">
+                    <div className="flex ml-6 text-sm">
                       <button
                         type="button"
-                        className="flex items-center space-x-1 px-2 py-1 pl-0"
+                        className="flex items-center px-2 py-1 pl-0 space-x-1"
                       >
                         <Trash size={12} className="text-red-500" />
                         <span className="text-xs font-medium text-red-500">
@@ -142,16 +142,16 @@ export function Cart() {
           {/* Order summary */}
           <section
             aria-labelledby="summary-heading"
-            className="mt-16 rounded-md bg-white lg:col-span-4 lg:mt-0 lg:p-0"
+            className="mt-16 bg-white rounded-md lg:col-span-4 lg:mt-0 lg:p-0"
           >
             <h2
               id="summary-heading"
-              className=" border-b border-gray-200 px-4 py-3 text-lg font-large text-gray-900 sm:p-4"
+              className="px-4 py-3 text-lg text-gray-900 border-b border-gray-200  font-large sm:p-4"
             >
               Price Details
             </h2>
             <div>
-              <dl className=" space-y-1 px-2 py-4">
+              <dl className="px-2 py-4 space-y-1 ">
                 <div className="flex items-center justify-between">
                   <dt className="text-sm text-gray-800">Price (3 item)</dt>
                   <dd className="text-sm font-medium text-gray-900">
@@ -172,7 +172,7 @@ export function Cart() {
                   </dt>
                   <dd className="text-sm font-medium text-green-700">Free</dd>
                 </div>
-                <div className="flex items-center justify-between border-y border-dashed py-4 ">
+                <div className="flex items-center justify-between py-4 border-dashed border-y ">
                   <dt className="text-base font-medium text-gray-900">
                     Total Amount
                   </dt>
@@ -184,7 +184,7 @@ export function Cart() {
               <div className="px-2 pb-4 font-medium text-green-700">
                 You will save ₹ 3,431 on this order
               </div>
-              <button className="text-pink-900 text-2xl border-2 bg-yellow-400">Place Order</button>
+              <button className="text-2xl text-pink-900 bg-yellow-400 border-2">Place Order</button>
             </div>
           </section>
         </form>
