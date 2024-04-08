@@ -1,7 +1,6 @@
 import { useState } from "react";
 import img from "../Images/login.webp";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -10,7 +9,7 @@ const Login = () => {
 
   const [isVerified, setIsVerified] = useState(false); // State for verification status
 
-  const navigate = useNavigate();
+  
   const handleContinueClick = () => {
     if (mobileNumber.length === 10) {
       setShowCaptcha(true);
@@ -29,7 +28,7 @@ const Login = () => {
     if (response) {
       setIsVerified(true);
       // Implement logic to redirect to otp.jsx (assuming otp.jsx exists)
-      navigate("OTPVerify");
+      
       console.log("Redirecting to OTP..."); // Replace with actual redirection logic
     } else {
       setIsVerified(false);
@@ -39,6 +38,7 @@ const Login = () => {
 
   return (
     <div>
+      
       <div className={`w-[100%] h-screen bg-[#fcecf4] py-10`}>
         <div className="h-[500px] bg-white mx-auto w-[100vw] sm:w-[430px] md:w-[430px] lg:w-[430px] xl:w-[430px] 2xl:w-[430px]">
           <img src={img} alt="login" className="w-auto min-h-[150px]" />

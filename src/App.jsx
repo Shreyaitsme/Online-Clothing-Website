@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import OTPVerify from "./Components/VerifyOtp";
-import { Cart } from "./Components/Cart";
+import { Cart } from "./shreya/Cart";
+import ProductPage from "./shreya/ProductPage";
+import MainHeader from './Components/MainHeader';
 
 
 const App = () => {
@@ -9,9 +11,12 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path = "/" element = {<MainHeader />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/OTPVerify" element={<OTPVerify/>} />
           <Route path="/Cart" element={<Cart/>} />
+          <Route path="/ProductPage" element={<ProductPage/>} />
+
           {/* <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Profile" element={<Profile />} /> */}
